@@ -1,9 +1,12 @@
-import { Input } from "@nextui-org/input";
+import Landing from "@/src/components/modules/Landing";
+import RecentPosts from "@/src/components/modules/RecentPosts";
+
 
 export default function Home() {
   return (
-    <section className="h-[calc(100vh-64px)] bg-[url('/glass.jpg')] bg-cover bg-center">
-      <Input />
-    </section>
+    <div>
+      <Landing />
+      <RecentPosts />
+    </div>
   );
 }
