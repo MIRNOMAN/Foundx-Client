@@ -1,16 +1,14 @@
 import { ReactNode } from "react";
 
 export default function layout({
-  children,
-  recentPosts,
+  children
 }: {
   children: ReactNode;
-  recentPosts: ReactNode;
 }) {
   return (
-    <>
+    <div>
+        <h1>this is layout</h1>
       {children}
-      {recentPosts}
-    </>
+    </div>
   );
 }
