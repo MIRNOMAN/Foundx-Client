@@ -1,3 +1,4 @@
+import { Avatar } from "@nextui-org/avatar";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -50,6 +51,9 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
+        </NavbarItem>
+        <NavbarItem className="hidden sm:flex gap-2">
+          <Avatar name="Junior" />
         </NavbarItem>
       </NavbarContent>
 
