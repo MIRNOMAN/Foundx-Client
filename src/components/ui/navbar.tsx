@@ -1,3 +1,4 @@
+import NavbarDropdown from "./NavbarDropdown";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -15,8 +16,6 @@ import clsx from "clsx";
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/ui/theme-switch";
 import { Logo } from "@/src/components/icons";
-import NavbarDropdown from "./NavbarDropdown";
-
 
 export const Navbar = () => {
   return (

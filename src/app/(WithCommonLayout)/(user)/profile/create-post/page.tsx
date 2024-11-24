@@ -1,4 +1,4 @@
-export default function CreatePost() {
+export default function page() {
     return (
       <div>
          <h1>User create post page</h1>
