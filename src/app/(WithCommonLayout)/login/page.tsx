@@ -1,12 +1,12 @@
 "use client";
 
-import FXForm from "@/src/components/form/FXForm";
-import FXInput from "@/src/components/form/FXInput";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
-import { zodResolver } from "@hookform/resolvers/zod";
-import loginValidationSchema from "@/src/schemas/logoin.schema";
 import { FieldValues, SubmitHandler } from "react-hook-form";
+import FXForm from "@/src/components/form/FXForm";
+import FXInput from "@/src/components/form/FXInput";
+import loginValidationSchema from "@/src/schemas/logoin.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const LoginPage = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
