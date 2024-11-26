@@ -19,13 +19,13 @@ export function middleware(request: NextRequest) {
 
   console.log(pathname);
 
-    const user = {
-      name: "Mir",
-      token: "adsf asda",
-      role: "ADMIN",
-    };
+    // const user = {
+    //   name: "Mir",
+    //   token: "adsf asda",
+    //   role: "ADMIN",
+    // };
 
-//   const user = undefined;
+  const user = undefined;
   
   if(!user){
      if(AuthRoutes.includes(pathname)){
