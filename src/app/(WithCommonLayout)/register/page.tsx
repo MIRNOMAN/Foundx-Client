@@ -12,7 +12,7 @@ import { FieldValues, SubmitHandler } from "react-hook-form";
 
 
 export default function RegisterPage() {
-  // const { mutate: handleUserRegistration, isPending } = useUserRegistration();
+  const { mutate: handleUserRegistration, isPending } = useUserRegistration();
 
   //   useEffect(() => {
   //     if (isPending) {
