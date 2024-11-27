@@ -15,3 +15,19 @@ export const useUserRegistration = () =>{
         }
     })
 }
+
+
+
+
+export const useUserLogin = () => {
+    return useMutation<any, Error, FieldValues>({
+      mutationKey: ["USER_LOGIN"],
+      mutationFn: async (userData) => await loginUser(userData),
+      onSuccess: () => {
+        toast.success("User login successful.");
+      },
+      onError: (error) => {
+        toast.error(error.message);
+      },
+    });
+  };
