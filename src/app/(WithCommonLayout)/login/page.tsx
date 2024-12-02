@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useUserLogin } from "@/src/hooks/auth.hook";
 import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/src/components/ui/Loading";
+import { useUser } from "@/src/context/user.provider";
 
 const LoginPage = () => {
   const searchParams = useSearchParams();
