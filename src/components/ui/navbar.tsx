@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import NavbarDropdown from "./NavbarDropdown";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -14,6 +13,8 @@ import { Link } from "@nextui-org/link";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+
+import NavbarDropdown from "./NavbarDropdown";
 
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/ui/theme-switch";

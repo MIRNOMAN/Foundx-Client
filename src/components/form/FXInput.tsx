@@ -1,16 +1,10 @@
 "use client";
 
+import { IInput } from "@/src/types";
 import { Input } from "@nextui-org/input";
 import { useFormContext } from "react-hook-form";
 
-interface IProps {
-  variant?: "flat" | "bordered" | "faded" | "underlined";
-  size?: "sm" | "md" | "lg";
-  required?: boolean;
-  type?: string;
-  label: string;
-  name: string;
-}
+interface IProps extends IInput {}
 
 export default function FXInput({
   variant = "bordered",
@@ -30,11 +24,11 @@ export default function FXInput({
       {...register(name)}
       errorMessage={errors[name] ? (errors[name].message as string) : ""}
       isInvalid={!!errors[name]}
-      variant={variant}
-      size={size}
-      required={required}
-      type={type}
       label={label}
+      required={required}
+      size={size}
+      type={type}
+      variant={variant}
     />
   );
 }

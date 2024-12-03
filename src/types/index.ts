@@ -4,7 +4,6 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
-
 export interface IPost {
   _id: string;
   title: string;
@@ -45,4 +44,15 @@ export interface IUser {
   createdAt?: string;
   updatedAt?: string;
   __v?: number;
+}
+
+
+export interface IInput {
+  variant?: "flat" | "bordered" | "faded" | "underlined";
+  size?: "sm" | "md" | "lg";
+  required?: boolean;
+  type?: string;
+  label: string;
+  name: string;
+  disabled?: boolean;
 }

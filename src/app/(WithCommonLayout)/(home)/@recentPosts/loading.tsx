@@ -4,7 +4,6 @@ import Link from "next/link";
 import Container from "@/src/components/ui/container";
 import CardSkeleton from "@/src/components/ui/CardSkeleton";
 
-
 export default async function RecentPosts() {
   return (
     <Container>
@@ -15,8 +14,8 @@ export default async function RecentPosts() {
         </p>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-3">
-        {[...Array(9)].map((_,index) => (
-          <CardSkeleton key={index}/>
+        {[...Array(9)].map((_, index) => (
+          <CardSkeleton key={index} />
         ))}
       </div>
       <div className="flex justify-center">

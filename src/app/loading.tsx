@@ -1,5 +1,5 @@
-export default function loading () {
-    <div>
-        <h1>Loading...</h1>
-    </div>
+export default function loading() {
+  <div>
+    <h1>Loading...</h1>
+  </div>;
 }
