@@ -21,8 +21,9 @@ import { useGetCategories } from "@/src/hooks/categoreis.hook";
 import FXTextarea from "@/src/components/form/FXTextArea";
 import { AddIcon, TrashIcon } from "@/src/assets/icons";
 import { useUser } from "@/src/context/user.provider";
+import Loading from "@/src/components/ui/Loading";
 import { useCreatePost } from "@/src/hooks/post.hook";
-import Loading from "@/src/components/UI/Loading";
+
 
 const cityOptions = allDistict()
   .sort()
