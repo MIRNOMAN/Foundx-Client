@@ -12,6 +12,7 @@ import ClaimRequestModal from "../../modals/ClaimRequestModal";
 import { useUser } from "@/src/context/user.provider";
 import AuthenticationModal from "../../modals/AuthenticationModal";
 
+
 interface IProps {
   post: IPost;
 }
