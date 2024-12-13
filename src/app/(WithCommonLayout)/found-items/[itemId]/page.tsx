@@ -1,5 +1,5 @@
-import Container from "@/src/components/UI/Container";
-import Post from "@/src/components/UI/Post";
+import Container from "@/src/components/ui/container";
+import Post from "@/src/components/ui/Post";
 import { getPost } from "@/src/services/post";
 
 interface IProps {
