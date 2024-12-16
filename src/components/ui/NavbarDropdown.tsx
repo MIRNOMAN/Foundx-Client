@@ -26,8 +26,8 @@ export default function NavbarDropdown() {
     }
   };
 
-  const handleNavigation = (pathname: string) => {
-    router.push(pathname);
+  const handleNavigation = (path: string) => {
+    router.push(path);
   };
 
   return (
@@ -35,21 +35,21 @@ export default function NavbarDropdown() {
       <DropdownTrigger>
         <Avatar className="cursor-pointer" src={user?.profilePhoto} />
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions">
-        <DropdownItem onClick={() => handleNavigation("/profile")}>
+      <DropdownMenu aria-label="User Actions">
+        <DropdownItem key="profile" onClick={() => handleNavigation("/profile")}>
           Profile
         </DropdownItem>
-        <DropdownItem onClick={() => handleNavigation("/profile/settings")}>
+        <DropdownItem key="settings" onClick={() => handleNavigation("/profile/settings")}>
           Settings
         </DropdownItem>
-        <DropdownItem onClick={() => handleNavigation("/profile/create-post")}>
+        <DropdownItem key="create-post" onClick={() => handleNavigation("/profile/create-post")}>
           Create Post
         </DropdownItem>
         <DropdownItem
-          key="delete"
+          key="logout"
           className="text-danger"
           color="danger"
-          onClick={() => handleLogout()}
+          onClick={handleLogout}
         >
           Logout
         </DropdownItem>

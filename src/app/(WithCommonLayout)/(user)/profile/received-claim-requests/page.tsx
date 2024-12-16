@@ -1,6 +1,6 @@
 "use client";
 
-import ClaimPostCard from "@/src/components/UI/Post/ClaimPostCard";
+import ClaimPostCard from "@/src/components/ui/Post/ClaimPostCard";
 import { useGetReceivedClaimRequest } from "@/src/hooks/claimRequest.hook";
 import { IReceivedClaimRequest } from "@/src/types";
 
