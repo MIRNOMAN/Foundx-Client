@@ -12,9 +12,33 @@ export default function Landing() {
   const [searchResults, setSearchResults] = useState<ISearchResult[] | []>([]);
   const router = useRouter();
 
+  const searchTerm = useDebounce(watch("search"));
+
+  useEffect(() => {
+    if (searchTerm) {
+      handleSearch(searchTerm);
+    }
+  }, [searchTerm]);
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data)
+    handleSeeAll(data.search);
   };
+
+  const handleSeeAll = (query: string) => {
+    const queryString = query.trim().split(" ").join("+");
+
+    router.push(`/found-items?query=${queryString}`);
+  };
+
+  useEffect(() => {
+    if (!searchTerm) {
+      setSearchResults([]);
+    }
+    if (!isPending && isSuccess && data && searchTerm) {
+      setSearchResults(data?.data?.hits ?? []);
+    }
+  }, [isPending, isSuccess, data, searchTerm]);
+
   return (
     <div className="h-[calc(100vh-64px)] bg-[url('/glass.jpg')] bg-cover bg-center">
       <div className="pt-32 max-w-xl flex-1 mx-auto">
