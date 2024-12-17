@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { ISearchResult } from "@/src/types";
 import Link from "next/link";
+import useDebounce from "@/src/hooks/debounce.hook";
+import { useSearchItems } from "@/src/hooks/search.hook";
 
 export default function Landing() {
   const { register, handleSubmit, watch } = useForm();
