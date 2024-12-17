@@ -2,9 +2,15 @@ import { Input } from "@nextui-org/input";
 
 import { SearchIcon } from "../../icons";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { ISearchResult } from "@/src/types";
 
 export default function Landing() {
-  const { register, handleSubmit,  } = useForm();
+  const { register, handleSubmit, watch } = useForm();
+  const { mutate: handleSearch, data, isPending, isSuccess } = useSearchItems();
+  const [searchResults, setSearchResults] = useState<ISearchResult[] | []>([]);
+  const router = useRouter();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data)
