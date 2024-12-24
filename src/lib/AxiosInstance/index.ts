@@ -31,4 +31,27 @@ axiosInstance.interceptors.response.use(
   }
 );
 
+
+axiosInstance.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  async function (error) {
+    const config = error.config;
+
+    if (error?.response?.status === 401 && !config?.sent) {
+      config.sent = true;
+      const res = await getNewAccessToken();
+      const accessToken = res.data.accessToken;
+
+      config.headers["Authorization"] = accessToken;
+      cookies().set("accessToken", accessToken);
+
+      return axiosInstance(config);
+    } else {
+      return Promise.reject(error);
+    }
+  }
+);
+
 export default axiosInstance;
