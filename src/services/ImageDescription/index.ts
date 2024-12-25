@@ -9,3 +9,15 @@ const generateDescription = async (imageURL: string, prompt: string) => {
     .then((arrayBuffer) => Base64.fromByteArray(new Uint8Array(arrayBuffer)));
 
   console.log("Image string", imageBase64);
+
+  const contents = [
+    {
+      role: "user",
+      parts: [
+        {
+          inline_data: { mime_type: "image/jpeg", data: imageBase64 },
+        },
+        { text: prompt },
+      ],
+    },
+  ];
