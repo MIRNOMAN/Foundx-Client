@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
 import { Input } from "@nextui-org/input";
-import { SearchIcon } from "../../icons";
+
+import { SearchIcon } from "../../../assets/icons";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
-import { ISearchResult } from "@/src/types";
-import Link from "next/link";
 import useDebounce from "@/src/hooks/debounce.hook";
 import { useSearchItems } from "@/src/hooks/search.hook";
+import { useEffect, useState } from "react";
+import { ISearchResult } from "@/src/types";
+import { Link } from "@nextui-org/link";
+import { useRouter } from "next/navigation";
 
 export default function Landing() {
   const { register, handleSubmit, watch } = useForm();
