@@ -21,3 +21,20 @@ const generateDescription = async (imageURL: string, prompt: string) => {
       ],
     },
   ];
+
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  //@ts-ignore
+  const result = await model.generateContentStream({ contents });
+
+  let responseString = "";
+
+  for await (const res of result.stream) {
+    responseString += res.text();
+  }
+
+  return responseString;
+};
+
+export default generateDescription;
